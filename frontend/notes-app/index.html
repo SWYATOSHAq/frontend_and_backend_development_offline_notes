@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Web App Manifest (Практика 14) -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Для Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Цвет темы браузера -->
+  <meta name="theme-color" content="#4f46e5" />
+
+  <!-- Для iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Заметки" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/icons/icon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/icons/icon-16x16.png" sizes="16x16" type="image/png" />
+
+  <title>Мои заметки</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-content">
+        <img src="/icons/icon-32x32.png" alt="Иконка" class="app-icon" />
+        <h1>Мои заметки</h1>
+      </div>
+      <div id="online-status" class="status-badge online">Онлайн</div>
+    </header>
+
+    <main class="app-main">
+      <form id="note-form" class="note-form">
+        <input
+          id="note-input"
+          type="text"
+          placeholder="Введите заметку..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Добавить</button>
+      </form>
+
+      <div class="notes-container">
+        <p class="notes-count" id="notes-count"></p>
+        <ul id="notes-list" class="notes-list"></ul>
+        <p class="empty-msg" id="empty-msg" style="display:none">Заметок пока нет. Добавьте первую!</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
