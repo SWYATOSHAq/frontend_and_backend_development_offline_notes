@@ -169,3 +169,133 @@ body {
   margin-top: 40px;
   font-size: 0.95rem;
 }
+
+/* ── Nav tabs (Практика 15) ── */
+.app-nav {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.nav-tab {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.nav-tab:hover:not(.active) {
+  color: var(--text);
+}
+
+/* ── About page (Практика 15) ── */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.about-version {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.about-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.about-list code {
+  font-family: monospace;
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.about-tech {
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Footer / Push buttons (Практика 16) ── */
+.app-footer {
+  text-align: center;
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.btn-push {
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-push:hover {
+  opacity: 0.85;
+}
+
+.btn-push-enable  { background: #22c55e; color: #fff; }
+.btn-push-disable { background: var(--danger); color: #fff; }
+
+/* ── Toast-уведомление (Практика 16) ── */
+.toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  animation: slideIn 0.2s ease;
+}

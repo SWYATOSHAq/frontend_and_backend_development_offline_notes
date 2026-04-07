@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Web App Manifest (Практика 14) -->
+  <!-- Web App Manifest -->
   <link rel="manifest" href="/manifest.json" />
 
   <!-- Для Android -->
@@ -23,10 +23,11 @@
   <link rel="icon" href="/icons/icon-32x32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="/icons/icon-16x16.png" sizes="16x16" type="image/png" />
 
-  <title>Мои заметки</title>
+  <title>Заметки (13-18)</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+  <!-- App Shell: кэшируется и загружается мгновенно -->
   <div class="app-shell">
     <header class="app-header">
       <div class="header-content">
@@ -36,26 +37,26 @@
       <div id="online-status" class="status-badge online">Онлайн</div>
     </header>
 
-    <main class="app-main">
-      <form id="note-form" class="note-form">
-        <input
-          id="note-input"
-          type="text"
-          placeholder="Введите заметку..."
-          autocomplete="off"
-          required
-        />
-        <button type="submit">Добавить</button>
-      </form>
+    <!-- Навигация (часть App Shell) -->
+    <nav class="app-nav">
+      <button id="home-btn" class="nav-tab active">Главная</button>
+      <button id="about-btn" class="nav-tab">О приложении</button>
+    </nav>
 
-      <div class="notes-container">
-        <p class="notes-count" id="notes-count"></p>
-        <ul id="notes-list" class="notes-list"></ul>
-        <p class="empty-msg" id="empty-msg" style="display:none">Заметок пока нет. Добавьте первую!</p>
-      </div>
+    <!-- Контейнер для динамического контента -->
+    <main id="app-content" class="app-main">
+      <!-- Сюда подгружается контент через fetch -->
     </main>
+
+    <!-- Кнопки push-уведомлений (Практика 16) -->
+    <footer class="app-footer">
+      <button id="enable-push" class="btn-push btn-push-enable">Включить уведомления</button>
+      <button id="disable-push" class="btn-push btn-push-disable" style="display:none;">Отключить уведомления</button>
+    </footer>
   </div>
 
+  <!-- Socket.IO (Практика 16) -->
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>
